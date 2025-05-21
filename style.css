@@ -1,10 +1,10 @@
 :root {
     --branco-principal: #FFFFFF;
     --cinza-secundario: #C0C0C0;
-    --botao-azul: #167BF7;
-    --botao-azul-efeito: #ffffff;
-    --cor-de-fundo: #00030C;
-    --fonte-principal: 'Inter';
+    --vermelho-principal: #E50914;
+    --vermelho-hover: #B81D24;
+    --cor-de-fundo: #141414;
+    --fonte-principal: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -23,13 +23,15 @@ body {
 .principal {
     background-image: url("img/Background.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    padding-top: 6em;
     align-items: center;
     text-align: center;
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
@@ -48,10 +50,11 @@ body {
 
 .container__imagem {
     margin: 1em 0 2em 0;
+    max-width: 100%;
 }
 
 .container__botao {
-    background-color: var(--botao-azul);
+    background-color: var(--vermelho-principal);
     border-radius: 5px;
     padding: 1em;
     color: var(--branco-principal);
@@ -77,6 +80,7 @@ body {
 
 .secundario__imagem {
     width: 80%;
+    max-width: 100%;
 }
 
 .descricao__titulo {
@@ -99,6 +103,32 @@ body {
     padding: 2em;
 }
 
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 3em;
+    background-color: var(--cor-de-fundo);
+}
+
+.cabecalho__logo {
+    width: 120px;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 1em;
+}
+
+.menu__link {
+    color: var(--branco-principal);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.menu__link:hover {
+    color: var(--vermelho-principal);
+}
 
 .dispositivos__lista {
     display: flex;
@@ -149,7 +179,7 @@ body {
 }
 
 .lista__link a:hover {
-    color: var(--botao-azul);
+    color: var(--vermelho-principal);
 }
 
 .lista__link a:active {
@@ -157,7 +187,45 @@ body {
 }   
 
 .container__botao:hover {
-    background-color: var(--botao-azul-efeito);
+    background-color: var(--vermelho-hover);
     color: var(--cor-de-fundo);
+}
+
+@media screen and (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    .cabecalho__menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        height: auto;
+        margin: 0 1.5em;
+    }
+
+    .principal {
+        padding-top: 8em;
+        padding-bottom: 2em;
+    }
+
+    .secundario {
+        margin: 2em 1.5em;
+        text-align: center;
+    }
+
+    .dispositivos__lista {
+        flex-direction: column;
+    }
+
+    .rodape__lista {
+        flex-direction: column;
+        gap: 0.5em;
+    }
 }
 
