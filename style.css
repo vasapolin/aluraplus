@@ -1,10 +1,10 @@
 :root {
     --branco-principal: #FFFFFF;
     --cinza-secundario: #C0C0C0;
-    --botao-azul: #167BF7;
-    --botao-azul-efeito: #ffffff;
-    --cor-de-fundo: #00030C;
-    --fonte-principal: 'Inter';
+    --vermelho-principal: #E50914;
+    --vermelho-hover: #B81D24;
+    --cor-de-fundo: #141414;
+    --fonte-principal: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -24,6 +24,7 @@ body {
     background-image: url("img/Background.png");
     background-repeat: no-repeat;
     background-size: contain;
+    padding-top: 6em;
     align-items: center;
     text-align: center;
 }
@@ -51,7 +52,7 @@ body {
 }
 
 .container__botao {
-    background-color: var(--botao-azul);
+    background-color: var(--vermelho-principal);
     border-radius: 5px;
     padding: 1em;
     color: var(--branco-principal);
@@ -99,6 +100,32 @@ body {
     padding: 2em;
 }
 
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 3em;
+    background-color: var(--cor-de-fundo);
+}
+
+.cabecalho__logo {
+    width: 120px;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 1em;
+}
+
+.menu__link {
+    color: var(--branco-principal);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.menu__link:hover {
+    color: var(--vermelho-principal);
+}
 
 .dispositivos__lista {
     display: flex;
@@ -149,7 +176,7 @@ body {
 }
 
 .lista__link a:hover {
-    color: var(--botao-azul);
+    color: var(--vermelho-principal);
 }
 
 .lista__link a:active {
@@ -157,7 +184,7 @@ body {
 }   
 
 .container__botao:hover {
-    background-color: var(--botao-azul-efeito);
+    background-color: var(--vermelho-hover);
     color: var(--cor-de-fundo);
 }
 
